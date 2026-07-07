@@ -1,385 +1,227 @@
 body {
-  margin: 0;
-  padding: 0;
+  background-color: #fffaf3;
+  color: #8B1E3F;
   font-family: Georgia, "Times New Roman", serif;
-  background-color: #f8f4ee;
-  color: #2b2b2b;
 }
 
-a {
-  text-decoration: none;
-}
-
-.custom-navbar {
-  background-color: #8B1E3F;
-  padding: 18px 0;
-}
-
-.brand-logo {
-  color: #E8DCC4 !important;
-  font-size: 1.6rem;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
-
-.custom-navbar .nav-link {
-  color: #E8DCC4 !important;
-  margin-left: 16px;
-}
-
-.custom-navbar .nav-link:hover {
-  color: white !important;
-}
-
-.hero-section {
-  background: linear-gradient(135deg, #8B1E3F 0%, #5f1028 100%);
-  color: #E8DCC4;
-  padding: 90px 0;
-}
-
-.hero-kicker,
-.section-kicker {
-  color: #E8DCC4;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 0.85rem;
-  font-weight: bold;
-}
-
-.hero-title {
-  font-size: 3.2rem;
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
-
-.hero-text {
-  font-size: 1.15rem;
-  max-width: 680px;
-  margin-bottom: 32px;
-}
-
-.hero-buttons .btn {
-  margin-right: 12px;
-  margin-bottom: 12px;
-}
-
-.btn-primary {
-  background-color: #8B1E3F;
-  border-color: #8B1E3F;
-}
-
-.btn-primary:hover {
-  background-color: #6f1732;
-  border-color: #6f1732;
-}
-
-.btn-outline-light {
-  border-color: #E8DCC4;
-  color: #E8DCC4;
-}
-
-.usp-box {
-  background-color: #E8DCC4;
-  color: #2F4F4F;
-  padding: 32px;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-}
-
-.usp-box h2 {
-  color: #8B1E3F;
-}
-
-.section-block {
-  padding: 70px 0;
-}
-
-.section-heading {
-  max-width: 760px;
-  margin: 0 auto 42px auto;
-}
-
-.section-heading h2 {
-  color: #8B1E3F;
-  font-size: 2.4rem;
-}
-
-.section-heading p {
-  font-size: 1.05rem;
-}
-
-.book-card {
-  border: none;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
-  background-color: white;
-}
-
-.book-card .card-title {
-  color: #8B1E3F;
-  font-size: 1.6rem;
-}
-
-.book-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-color: #E8DCC4;
-}
-
-.book-cover-placeholder {
-  height: 100%;
-  min-height: 320px;
-  background-color: #E8DCC4;
-  color: #8B1E3F;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.3rem;
-}
-
-.genre-badge {
-  background-color: #2F4F4F;
-  color: white;
-  align-self: flex-start;
-}
-
-.book-author {
-  color: #2F4F4F;
-  font-weight: bold;
-}
-
-.book-details {
-  padding-left: 18px;
-  margin-bottom: 20px;
-}
-
-.company-section {
-  background-color: #E8DCC4;
-}
-
-.company-section h2 {
-  color: #8B1E3F;
-}
-
-.info-card {
-  background-color: white;
-  border-left: 8px solid #2F4F4F;
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-}
-
-.info-card h3 {
-  color: #8B1E3F;
-}
-
-.navigation-section {
-  background-color: #f8f4ee;
-}
-
-.quick-link {
+.logo {
+  height: 50px;
+  width: auto;
   display: block;
-  text-align: center;
-  background-color: white;
-  color: #8B1E3F;
-  padding: 28px 16px;
-  border-radius: 14px;
-  font-weight: bold;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.09);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.quick-link:hover {
-  color: #2F4F4F;
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.14);
-}
-
-.footer-section {
-  background-color: #2F4F4F;
-  color: #E8DCC4;
-  padding: 30px 0;
-}
-
-.footer-section a {
-  color: #E8DCC4;
-}
-
-.footer-section a:hover {
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.3rem;
-  }
-
-  .hero-section {
-    padding: 60px 0;
-  }
-
-  .book-cover {
-    height: 280px;
-  }
-}
-/* Startseite Literaturhaus München */
-.home-page {
-  background-color: #f8f4ee;
-  color: #2b2b2b;
-  font-family: Georgia, "Times New Roman", serif;
-}
-
-.lh-navbar {
-  background-color: #fffaf3;
-  border-bottom: 1px solid rgba(139, 30, 63, 0.18);
-  padding: 18px 0;
-}
-
-.lh-brand {
-  color: #8B1E3F !important;
-  font-size: 1.7rem;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-}
-
-.lh-navbar .nav-link {
-  color: #2F4F4F;
-  font-weight: 600;
-  margin-left: 14px;
-}
-
-.lh-navbar .nav-link:hover {
-  color: #8B1E3F;
-}
-
-.lh-hero {
-  min-height: 680px;
-  background-image: url('/images/sections/hero-literaturhaus-muenchen.png');
-  background-size: cover;
-  background-position: center;
-}
-
-.lh-hero-overlay {
-  min-height: 680px;
-  background: linear-gradient(90deg, rgba(47, 79, 79, 0.92) 0%, rgba(47, 79, 79, 0.72) 42%, rgba(47, 79, 79, 0.15) 100%);
-  display: flex;
-  align-items: center;
-}
-
-.min-vh-75 {
-  min-height: 680px;
-}
-
-.lh-kicker,
-.lh-section-kicker {
-  color: #8B1E3F;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.lh-hero .lh-kicker {
-  color: #E8DCC4;
-}
-
-.lh-hero h1 {
-  color: #fffaf3;
-  font-size: 4.4rem;
-  line-height: 1.05;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
-
-.lh-hero-text {
-  color: #f4ead8;
-  font-size: 1.25rem;
-  line-height: 1.7;
-  max-width: 680px;
-  margin-bottom: 32px;
-}
-
-.lh-hero-actions .btn {
-  margin-right: 12px;
-  margin-bottom: 12px;
-}
-
-.btn-lh-primary {
-  background-color: #8B1E3F;
-  border: 1px solid #8B1E3F;
-  color: #fff !important;
-  font-weight: 700;
-  border-radius: 999px;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.btn-lh-primary:hover {
-  background-color: #6f1732;
-  border-color: #6f1732;
-  color: #fff !important;
-}
-
-.btn-lh-light {
-  background-color: rgba(232, 220, 196, 0.92);
-  border: 1px solid #E8DCC4;
-  color: #2F4F4F !important;
-  font-weight: 700;
-  border-radius: 999px;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.btn-lh-light:hover {
-  background-color: #fffaf3;
-  color: #8B1E3F !important;
-}
-
-.btn-lh-outline {
+.nav-link { /*buttons oben*/
   border: 1px solid #8B1E3F;
   color: #8B1E3F;
-  border-radius: 999px;
+  border-radius: 6px;
   padding: 10px 22px;
   font-weight: 700;
 }
 
-.btn-lh-outline:hover {
+.nav-link:hover {
   background-color: #8B1E3F;
-  color: #fff;
+  color: #fffaf3;
+  transform: scale(1.05);
 }
 
-.lh-section {
+.nav-link:active {
+  transform: scale(0.95);
+}
+
+.desktop-menue {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+.header-zeile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-left: 165px;
+  margin-right: 165px;
+
+  gap: 8px;
+}
+
+.burger-menue { /*burgermenu*/
+  display: none;
+    position: relative;
+  margin-left: auto;
+}
+
+@media (max-width: 800px) {
+  .desktop-menue {
+    display: none;
+  }
+
+  .burger-menue {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+.burgerbutton {
+  padding: 8px 14px;
+  border: 1px solid #8B1E3F;
+  border-radius: 8px;
+
+  background-color: #fffaf3;
+  color: #8B1E3F;
+
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.burger-liste {
+  display: none;
+  position: absolute;
+  top: 48px;
+  right: 0;
+
+  min-width: 180px;
+  background-color: #fffaf3;
+  border: 1px solid #8B1E3F;
+  border-radius: 10px;
+
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.burger-liste.anzeigen {
+  display: flex;
+  flex-direction: column;
+}
+
+.burger-liste button {
+  width: 100%;
+  padding: 14px 18px;
+
+  border: none;
+  border-bottom: 1px solid;
+
+  background-color: #fffaf3;
+  color: #8B1E3F;
+
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.burger-liste button:last-child {
+  border-bottom: none;
+}
+
+.burger-liste button:hover {
+  background-color: #8B1E3F;
+  color: #fffaf3;
+}
+
+@media (max-width: 800px) {
+  .header-zeile {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .desktop-menue {
+    display: none;
+  }
+
+  .burger-menue {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+.navbar { /*für das anklicken des Logos*/
+  background-color: #fffaf3;
+  padding: 18px 0;
+}
+
+.startbild {
+  min-height: clamp(420px, 75vh, 680px);
+  background-image: url('/images/sections/hero-literaturhaus-muenchen.png');
+  background-size: cover;
+  background-position: center;
+  background-color: #8B1E3F;
+}
+
+.startbildoverlay {
+  min-height: clamp(420px, 75vh, 680px);
+  background: linear-gradient(
+    to right,
+    rgba(139, 30, 63, 1) 0%,
+    rgba(139, 30, 63, 0.85) 40%,
+    rgba(139, 30, 63, 0.25) 75%,
+    rgba(139, 30, 63, 0) 100%
+  );
+
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 800px) { /*banner beim kleineren Fenster*/
+  .startbildoverlay {
+    background: linear-gradient(
+      to right,
+      rgba(139, 30, 63, 1) 0%,
+      rgba(139, 30, 63, 0.95) 45%,
+      rgba(139, 30, 63, 0.75) 75%,
+      rgba(139, 30, 63, 0.45) 100%
+    );
+  }
+}
+
+.text1 {
+  color: #E8DCC4;
+  letter-spacing: 1.4px;
+  line-height: 1.7;
+}
+
+.text2 {
+  color: #fffaf3;
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: 1.4px;
+}
+
+.text3 {
+  color: #E8DCC4;
+  font-size: clamp(14px, 2vw, 20px);
+  line-height: 1.7;
+  max-width: 680px;
+  margin-bottom: 32px;
+  letter-spacing: 1.4px;
+}
+
+.section {
   padding: 78px 0;
 }
 
-.lh-section h2 {
+.sectiontext {
   color: #8B1E3F;
-  font-size: 2.7rem;
+  font-size: 44px;
   font-weight: 700;
 }
 
-.lh-section-text {
-  max-width: 740px;
-  color: #555;
-  font-size: 1.08rem;
-}
 
-.lh-book-card {
-  background-color: #fffaf3;
-  border: 1px solid rgba(139, 30, 63, 0.12);
-  border-radius: 28px;
+.bookcard {
+  background-color: #E8DCC4;
+  border: 1px solid #8B1E3F;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 18px 45px rgba(47, 79, 79, 0.13);
+  border-radius: 14px;
 }
 
-.lh-book-image-wrap {
-  background: linear-gradient(180deg, #E8DCC4, #f8f4ee);
+.bookimage {
+  background: #E8DCC4;
   padding: 28px;
   height: 100%;
   display: flex;
@@ -387,62 +229,132 @@ a {
   justify-content: center;
 }
 
-.lh-book-image {
+.bookpic {
   width: 100%;
   max-height: 390px;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
 }
 
-.lh-book-content {
+.bookcontent {
   padding: 32px;
 }
 
-.lh-book-content h3 {
+.badge {
+  display: inline-block;
+  background-color: #2F4F4F;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.bookcontent h1 {
   color: #8B1E3F;
-  font-size: 1.7rem;
+  font-size: 30px;
   font-weight: 700;
   margin-top: 12px;
 }
 
-.lh-author {
+.author {
   color: #2F4F4F;
   font-weight: 700;
+  font-size: 20px;
 }
 
-.lh-badge {
-  display: inline-block;
-  background-color: #2F4F4F;
-  color: #fff;
-  padding: 7px 12px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
+.bookstory {
+  color: #222222;
+  font-size: 15px;
 }
 
-.lh-book-meta {
+.bookinfos {
   list-style: none;
   padding-left: 0;
   margin: 18px 0 24px;
-  color: #444;
+  color: #222222;
+  font-size: 15px;
 }
 
-.lh-book-meta li {
+.bookmeta {
   margin-bottom: 5px;
 }
 
-.lh-about-section {
+.reservierenbutton {
+  background-color: #fffaf3;
+  border: 1px solid #8B1E3F;
+  color: #8B1E3F;
+  font-weight: 700;
+  border-radius: 999px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.reservierenbutton:hover {
+  background-color: #8B1E3F;
+  border-color: #fffaf3;
+  color: #fffaf3;
+}
+
+.aboutsection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   background-color: #E8DCC4;
+  border-radius: 10px;
+  padding: 30px;
 }
 
-.lh-about-image {
+.abouttext {
+  flex: 1;
+  max-width: 100%;
+}
+
+
+.aboutimage {
   width: 100%;
-  border-radius: 28px;
-  box-shadow: 0 18px 45px rgba(47, 79, 79, 0.16);
+  max-width: 480px;
+  border-radius: 10px;
+  height: auto;
 }
 
-.lh-contact-box {
+.text5 {
+  color: #222222;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.text4 {
+  color: #8B1E3F;
+  font-size: 30px;
+  line-height: 1.7;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+@media (max-width: 800px) {
+  .aboutsection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .aboutimage,
+  .abouttext {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .text4 {
+    font-size: 35px;
+  }
+
+  .text5 {
+    font-size: 18px;
+  }
+}
+
+.contactbox { /*Kontaktbox unten */
   background-color: #fffaf3;
   border-left: 8px solid #2F4F4F;
   border-radius: 18px;
@@ -451,17 +363,17 @@ a {
   box-shadow: 0 10px 25px rgba(47, 79, 79, 0.1);
 }
 
-.lh-contact-box p:last-child {
+.contactbox p:last-child {
   margin-bottom: 0;
 }
 
 .lh-quick-section {
-  background-color: #f8f4ee;
+  background-color: #E8DCC4;
 }
 
 .lh-quick-card {
   display: block;
-  background-color: #fffaf3;
+  background-color: #E8DCC4;
   color: #8B1E3F;
   border: 1px solid rgba(139, 30, 63, 0.12);
   border-radius: 20px;
@@ -478,35 +390,24 @@ a {
   box-shadow: 0 16px 35px rgba(47, 79, 79, 0.16);
 }
 
-.lh-footer {
-  background-color: #2F4F4F;
-  color: #E8DCC4;
-  padding: 28px 0;
+/*footer*/
+
+.footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #8b1e3f;
+  color: #e8dcc4;
+  padding: 18px 10px;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
-.lh-footer a {
-  color: #E8DCC4;
-  text-decoration: none;
-}
-
-.lh-footer a:hover {
-  color: #fff;
-}
-
-@media (max-width: 991px) {
-  .lh-hero,
-  .lh-hero-overlay,
-  .min-vh-75 {
-    min-height: 560px;
-  }
-
-  .lh-hero h1 {
-    font-size: 3rem;
-  }
-
-  .lh-hero-overlay {
-    background: rgba(47, 79, 79, 0.82);
-  }
+.footer a {
+  color: #e8dcc4;
+  text-decoration: underline;
+  margin: 6px 0;
+  font-size: 14px;
 }
 
 @media (max-width: 767px) {
@@ -534,13 +435,13 @@ a {
 
 /* Impressum */
 .lh-legal-page {
-  background-color: #f8f4ee;
-  color: #2b2b2b;
+  background-color: #ffffff;
+  color: #8B1E3F;
 }
 
-.lh-legal-hero {
+.lh-legal-hero { /*Text oben */
   background: linear-gradient(135deg, rgba(139, 30, 63, 0.96), rgba(47, 79, 79, 0.94));
-  color: #E8DCC4;
+  color: #ffffff;
   padding: 72px 0;
 }
 
@@ -557,7 +458,7 @@ a {
 }
 
 .lh-legal-card {
-  background-color: #fffaf3;
+  background-color: #E8DCC4;
   border-radius: 26px;
   padding: 42px;
   box-shadow: 0 18px 45px rgba(47, 79, 79, 0.12);
@@ -570,7 +471,7 @@ a {
 }
 
 .lh-legal-card h3 {
-  color: #2F4F4F;
+  color: #8B1E3F;
   font-size: 1.2rem;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -692,24 +593,14 @@ a {
 
 
 /* Logo und weniger runde Buttons */
-.lh-brand {
-  display: flex;
-  align-items: center;
-  padding: 0;
-}
 
-.lh-logo-img {
-  height: 58px;
-  width: auto;
-  display: block;
-}
 
 .home-page .btn,
 .btn-lh-primary,
 .btn-lh-light,
 .btn-lh-outline,
 .btn-lh-footer {
-  border-radius: 6px !important;
+  border-radius: 6px;
 }
 
 .lh-book-card,
@@ -721,12 +612,13 @@ a {
 .lh-badge {
   border-radius: 4px;
 }
-
+/*
 @media (max-width: 767px) {
   .lh-logo-img {
     height: 46px;
   }
 }
+  */
 
 /* Datenschutzseite */
 .lh-legal-card {

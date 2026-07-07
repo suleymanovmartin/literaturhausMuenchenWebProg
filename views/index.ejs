@@ -9,39 +9,77 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body class="home-page">
+<body>
 
-  <nav class="navbar navbar-expand-lg lh-navbar">
-    <div class="container">
-      <a class="navbar-brand lh-brand" href="/">
-        <img src="/images/logo/literaturhaus-muenchen-logo.png" class="lh-logo-img" alt="Literaturhaus München Logo">
+  <header class=""kopfbereich>
+
+    <div class="header-zeile">
+      <a class="navbar" href="/">
+        <img src="/images/logo/literaturhaus-muenchen-logo.png" class="logo" alt="Literaturhaus München Logo">
       </a>
 
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/">Start</a>
-        <a class="nav-link" href="#neuerscheinungen">Neuerscheinungen</a>
-        <a class="nav-link" href="/reservieren">Reservierung</a>
-        <a class="nav-link" href="/admin/produkte">Admin</a>
-        <a class="nav-link" href="/login">Login</a>
-      </div>
-    </div>
-  </nav>
+      <div class="buttonbereich">
+      <div class="desktop-menue">
 
-  <header class="lh-hero">
-    <div class="lh-hero-overlay">
+
+<button type="button" class="nav-link" onclick="window.location.href='/'">
+  Start
+</button>
+
+<button type="button" class="nav-link" onclick="window.location.href='/secondhand'">
+  Second-Hand
+</button>
+
+<button type="button" class="nav-link" onclick="window.location.href='/reservieren'">
+  Reservierung
+</button>
+
+<button type="button" class="nav-link" onclick="window.location.href='/admin/produkte'">
+  Admin
+</button>
+
+<button type="button" class="nav-link" onclick="window.location.href='/login'">
+  Log In
+</button>
+
+      </div>
+      </div>
+
+      <div class="burger-menue">
+      <button type="button" class="burgerbutton" onclick="menueUmschalten()">
+        ☰
+      </button>
+
+        <div class="burger-liste" id="burgerListe">
+        <button type="button" onclick="window.location.href='/'">Start</button>
+        <button type="button" onclick="window.location.href='/secondhand'">Second-Hand</button>
+        <button type="button" onclick="window.location.href='/reservieren'">Reservierung</button>
+        <button type="button" onclick="window.location.href='/admin/produkte'">Admin</button>
+        <button type="button" onclick="window.location.href='/login'">Log-In</button>
+      </div>
+
+    </div>
+
+    </div>
+  </header>
+
+  <script>
+  function menueUmschalten() {
+    document.getElementById("burgerListe").classList.toggle("anzeigen");
+  }
+</script>
+
+  <header class="startbild">
+    <div class="startbildoverlay">
       <div class="container">
         <div class="row align-items-center min-vh-75">
           <div class="col-lg-7">
-            <p class="lh-kicker">Online stöbern · Lokal reservieren · Vor Ort abholen</p>
-            <h1>Literaturhaus München</h1>
-            <p class="lh-hero-text">
+            <p class="text1">Online stöbern · Lokal reservieren · Vor Ort abholen</p>
+            <p class="text2">Literaturhaus München</p>
+            <p class="text3">
               Entdecken Sie neue Bücher, stöbern Sie durch ausgewählte Titel und reservieren Sie Ihre Favoriten unkompliziert für eine Woche in unserer Münchner Filiale.
             </p>
 
-            <div class="lh-hero-actions">
-              <a href="#neuerscheinungen" class="btn btn-lh-primary btn-lg">Neuerscheinungen ansehen</a>
-              <a href="/reservieren" class="btn btn-lh-light btn-lg">Buch reservieren</a>
-            </div>
           </div>
         </div>
       </div>
@@ -49,46 +87,39 @@
   </header>
 
   <main>
-    <section id="neuerscheinungen" class="lh-section">
+    <section class="section">
       <div class="container">
         <div class="row align-items-end mb-4">
           <div class="col-md-8">
-            <p class="lh-section-kicker">Frisch eingetroffen</p>
-            <h2>Neue Bucherscheinungen</h2>
-            <p class="lh-section-text">
-              Zwei aktuelle Titel aus unserem Sortiment. Direkt ansehen und ohne Onlinekauf zur Abholung reservieren.
-            </p>
-          </div>
-          <div class="col-md-4 text-md-end">
-            <a href="/reservieren" class="btn btn-lh-outline">Zur Reservierung</a>
+            <p class="sectiontext">Highlights der Woche</p>
           </div>
         </div>
 
         <div class="row">
           <% neuesteBuecher.forEach(function(buch) { %>
             <div class="col-lg-6 mb-4">
-              <article class="lh-book-card h-100">
+              <article class="bookcard h-100">
                 <div class="row g-0 h-100 align-items-center">
                   <div class="col-md-5">
-                    <div class="lh-book-image-wrap">
-                      <img src="<%= buch.frontcover %>" class="lh-book-image" alt="Cover von <%= buch.title %>">
+                    <div class="bookimage">
+                      <img src="<%= buch.frontcover %>" class="bookpic" alt="Cover von <%= buch.title %>">
                     </div>
                   </div>
 
                   <div class="col-md-7">
-                    <div class="lh-book-content">
-                      <span class="lh-badge"><%= buch.genre %></span>
-                      <h3><%= buch.title %></h3>
-                      <p class="lh-author">von <%= buch.author %></p>
-                      <p><%= buch.description %></p>
+                    <div class="bookcontent">
+                      <span class="badge"><%= buch.genre %></span>
+                      <h1><%= buch.title %></h1>
+                      <p class="author">von <%= buch.author %></p>
+                      <p class="bookstory"><%= buch.description %></p>
 
-                      <ul class="lh-book-meta">
+                      <ul class="bookinfos">
                         <li><strong>ISBN:</strong> <%= buch.isbn %></li>
                         <li><strong>Preis:</strong> <%= Number(buch.price).toFixed(2) %> €</li>
                         <li><strong>Lagerbestand:</strong> <%= buch.bestand %></li>
                       </ul>
 
-                      <a href="/reservieren?buch=<%= buch.id %>" class="btn btn-lh-primary">Jetzt reservieren</a>
+                      <a href="/reservieren?buch=<%= buch.id %>" class="btn reservierenbutton">Jetzt reservieren</a>
                     </div>
                   </div>
                 </div>
@@ -99,24 +130,25 @@
       </div>
     </section>
 
-    <section class="lh-section lh-about-section">
+    <section class="section aboutsection">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 mb-4 mb-lg-0">
-            <img src="/images/sections/about-literaturhaus-muenchen.png" class="lh-about-image" alt="Innenansicht des Literaturhaus München">
+            <img src="/images/sections/about-literaturhaus-muenchen.png" class="aboutimage" alt="Innenansicht des Literaturhaus München">
           </div>
 
-          <div class="col-lg-6">
-            <p class="lh-section-kicker">Über uns</p>
-            <h2>Ihre Buchhandlung im Herzen Münchens</h2>
-            <p>
+          
+            <div class="abouttext">
+            <p class="text4"> Ihre Buchhandlung im Herzen Münchens</p>
+            <p class="text5">
               Das Literaturhaus München verbindet persönliche Beratung mit einer übersichtlichen Online-Präsentation des Sortiments. Kundinnen und Kunden können Bücher entdecken, Informationen ansehen und Titel bequem reservieren.
             </p>
-            <p>
+            <p class="text5">
               Unser besonderer Vorteil: kein komplizierter Kaufprozess, keine Zahlungsdaten und keine unnötigen Angaben. Bücher werden eine Woche zurückgelegt und können in der Filiale abgeholt werden.
             </p>
+            </div>
 
-            <div class="lh-contact-box">
+            <div class="contactbox">
               <p><strong>Kontakt:</strong> kontakt@literaturhaus-muenchen.de</p>
               <p><strong>Telefon:</strong> 089 / 123456</p>
               <p><strong>Filiale:</strong> Literaturhaus München</p>
@@ -128,7 +160,7 @@
 
   </main>
 
-  <footer id="footer" class="lh-footer lh-footer-large">
+  <footer id="footer" class="footer">
     <div class="container">
       <div class="row gy-4 align-items-start">
         <div class="col-lg-4 col-md-6">
@@ -170,7 +202,7 @@
         </div>
       </div>
 
-      <div class="lh-footer-bottom">
+      <div class="footer">
         <p class="mb-0">Beratung · Reservierung · Abholung</p>
       </div>
     </div>
