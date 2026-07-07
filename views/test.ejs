@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Backend Testseite (EJS)</title>
+</head>
+<body>
+    <h1>Buch hinzufügen (Test)</h1>
+    
+    <% if (locals.nachricht) { %>
+        <div style="background-color: #d4edda; color: #155724; padding: 10px; margin-bottom: 20px;">
+            <%= nachricht %>
+        </div>
+    <% } %>
+
+    <label for="titel">Buchtitel:</label>
+    <input type="text" id="titel" placeholder="z.B. Der Herr der Ringe"><br><br>
+    
+    <label for="autor">Autor:</label>
+    <input type="text" id="autor" placeholder="z.B. J.R.R. Tolkien"><br><br>
+    
+    <button onclick="buchSenden()">Daten an Backend senden</button>
+
+    <h3>Antwort vom Server (Live):</h3>
+    <pre id="antwort" style="background-color: #f0f0f0; padding: 10px; min-height: 50px;"></pre>
+
+    <script>
+        // Dieses Script läuft im Browser des Nutzers
+        async function buchSenden() {
+            const titelWert = document.getElementById('titel').value;
+            const autorWert = document.getElementById('autor').value;
+
+            const buchDaten = { titel: titelWert, autor: autorWert };
+
+            try {
+                // Wir senden die Daten an dieselbe Route, die uns die Seite geliefert hat
+                const response = await fetch('/test', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(buchDaten)
+                });
+
+                const antwortDaten = await response.json();
+                document.getElementById('antwort').innerText = JSON.stringify(antwortDaten, null, 2);
+                
+            } catch (fehler) {
+                document.getElementById('antwort').innerText = 'Fehler bei der Verbindung.';
+            }
+        }
+    </script>
+</body>
+</html>

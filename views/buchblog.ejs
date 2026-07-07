@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buchblog</title>
+</head>
+<body>
+  <div>
+    <div>
+      <img src="<%= buch.frontcover %>">
+      <img src="<%= buch.backcover %>">
+    </div>
+    <div>
+      <h1><%= buch.title %></h1>
+      <p>ISBN:  <%= buch.isbn %></p>
+      <p>Autor:   <%= buch.author %></p>
+      <p>Genre:   <%= buch.genre %></p>
+      <p>Kurzbeschreibung:  <%= buch.description %></p>
+      <p>Preis:   <%= buch.price %></p>
+      <p>Bestand:   <%= buch.bestand %></p>
+      <p>ID:  <%= buch.id %></p>
+      <form action="/buch/<%= buch.id %>/reservieren" method="POST">
+        <button type="submit">Reservieren</button>
+      </form>
+    </div>
+  </div>
+  <div>
+    Neuerscheinungen Liste
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h2>Welcome to <%= title %></h2>
+    <p><%= nachricht %></p>
+    <a href="/lyxia.html">Hier ist die 2. Seite du mongo</a>
+    <ol>
+      <% daten.forEach(function(person) { %>
+        <li>Name: <%= person.iname %>, Alter: <%= person.age %></li>
+      <% }); %>
+    </ol>
+  </body>
+</html>

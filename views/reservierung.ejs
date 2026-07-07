@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bücherladen: Reservierung</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Hallo Nutzer</h1>
+    <p>Hier ist die Übersicht ihrer Bestellungen</p>
+    <tr>
+      <th>Buch</th>
+      <th>Autor</th>
+      <th>Reservierungdatum</th>
+      <th>Aktion</th>
+    </tr>
+    <% rarray.forEach(function(reservierung, index) { %>
+      <tr>
+        <td><%= reservierung.name %></td>
+        <td><%= reservierung.title %></td>
+        <td><%= reservierung.author %></td>
+        <td>
+          <form action="/reservieren/loeschen/:index" method="POST">
+            <button type="submit">Stornieren</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+    <a href="<%= link %>">Zurück zur Startseite</a>
+  </body>
+</html>
