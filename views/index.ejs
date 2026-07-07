@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body class="home-page">
+
+  <nav class="navbar navbar-expand-lg lh-navbar">
+    <div class="container">
+      <a class="navbar-brand lh-brand" href="/">
+        <img src="/images/logo/literaturhaus-muenchen-logo.png" class="lh-logo-img" alt="Literaturhaus München Logo">
+      </a>
+
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/">Start</a>
+        <a class="nav-link" href="#neuerscheinungen">Neuerscheinungen</a>
+        <a class="nav-link" href="/reservieren">Reservierung</a>
+        <a class="nav-link" href="/admin/produkte">Admin</a>
+        <a class="nav-link" href="/login">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="lh-hero">
+    <div class="lh-hero-overlay">
+      <div class="container">
+        <div class="row align-items-center min-vh-75">
+          <div class="col-lg-7">
+            <p class="lh-kicker">Online stöbern · Lokal reservieren · Vor Ort abholen</p>
+            <h1>Literaturhaus München</h1>
+            <p class="lh-hero-text">
+              Entdecken Sie neue Bücher, stöbern Sie durch ausgewählte Titel und reservieren Sie Ihre Favoriten unkompliziert für eine Woche in unserer Münchner Filiale.
+            </p>
+
+            <div class="lh-hero-actions">
+              <a href="#neuerscheinungen" class="btn btn-lh-primary btn-lg">Neuerscheinungen ansehen</a>
+              <a href="/reservieren" class="btn btn-lh-light btn-lg">Buch reservieren</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="neuerscheinungen" class="lh-section">
+      <div class="container">
+        <div class="row align-items-end mb-4">
+          <div class="col-md-8">
+            <p class="lh-section-kicker">Frisch eingetroffen</p>
+            <h2>Neue Bucherscheinungen</h2>
+            <p class="lh-section-text">
+              Zwei aktuelle Titel aus unserem Sortiment. Direkt ansehen und ohne Onlinekauf zur Abholung reservieren.
+            </p>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <a href="/reservieren" class="btn btn-lh-outline">Zur Reservierung</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <% neuesteBuecher.forEach(function(buch) { %>
+            <div class="col-lg-6 mb-4">
+              <article class="lh-book-card h-100">
+                <div class="row g-0 h-100 align-items-center">
+                  <div class="col-md-5">
+                    <div class="lh-book-image-wrap">
+                      <img src="<%= buch.frontcover %>" class="lh-book-image" alt="Cover von <%= buch.title %>">
+                    </div>
+                  </div>
+
+                  <div class="col-md-7">
+                    <div class="lh-book-content">
+                      <span class="lh-badge"><%= buch.genre %></span>
+                      <h3><%= buch.title %></h3>
+                      <p class="lh-author">von <%= buch.author %></p>
+                      <p><%= buch.description %></p>
+
+                      <ul class="lh-book-meta">
+                        <li><strong>ISBN:</strong> <%= buch.isbn %></li>
+                        <li><strong>Preis:</strong> <%= Number(buch.price).toFixed(2) %> €</li>
+                        <li><strong>Lagerbestand:</strong> <%= buch.bestand %></li>
+                      </ul>
+
+                      <a href="/reservieren?buch=<%= buch.id %>" class="btn btn-lh-primary">Jetzt reservieren</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <section class="lh-section lh-about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <img src="/images/sections/about-literaturhaus-muenchen.png" class="lh-about-image" alt="Innenansicht des Literaturhaus München">
+          </div>
+
+          <div class="col-lg-6">
+            <p class="lh-section-kicker">Über uns</p>
+            <h2>Ihre Buchhandlung im Herzen Münchens</h2>
+            <p>
+              Das Literaturhaus München verbindet persönliche Beratung mit einer übersichtlichen Online-Präsentation des Sortiments. Kundinnen und Kunden können Bücher entdecken, Informationen ansehen und Titel bequem reservieren.
+            </p>
+            <p>
+              Unser besonderer Vorteil: kein komplizierter Kaufprozess, keine Zahlungsdaten und keine unnötigen Angaben. Bücher werden eine Woche zurückgelegt und können in der Filiale abgeholt werden.
+            </p>
+
+            <div class="lh-contact-box">
+              <p><strong>Kontakt:</strong> kontakt@literaturhaus-muenchen.de</p>
+              <p><strong>Telefon:</strong> 089 / 123456</p>
+              <p><strong>Filiale:</strong> Literaturhaus München</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="lh-footer lh-footer-large">
+    <div class="container">
+      <div class="row gy-4 align-items-start">
+        <div class="col-lg-4 col-md-6">
+          <h2 class="lh-footer-brand">Literaturhaus München</h2>
+          <p class="lh-footer-text">
+            Ihre Buchhandlung im Herzen Münchens: online stöbern, lokal reservieren und persönlich abholen.
+          </p>
+          <a href="/reservieren" class="btn btn-lh-footer">Buch reservieren</a>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h3>Kontakt</h3>
+          <p class="mb-2">Literaturhaus München</p>
+          <p class="mb-2">Salvatorplatz 1</p>
+          <p class="mb-2">80333 München</p>
+          <p class="mb-2"><a href="mailto:kontakt@literaturhaus-muenchen.de">kontakt@literaturhaus-muenchen.de</a></p>
+          <p class="mb-0">089 / 123456</p>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h3>Reservierung</h3>
+          <p class="lh-footer-text mb-2">
+            Reservierte Bücher werden eine Woche für Sie zurückgelegt.
+          </p>
+          <p class="mb-2"><strong>Abholung:</strong> in unserer Filiale</p>
+          <p class="mb-0"><strong>Onlinekauf:</strong> nicht erforderlich</p>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h3>Links</h3>
+          <ul class="lh-footer-links">
+            <li><a href="/">Startseite</a></li>
+            <li><a href="#neuerscheinungen">Neuerscheinungen</a></li>
+            <li><a href="/reservieren">Reservierung</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/impressum">Impressum</a></li>
+            <li><a href="/datenschutz">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lh-footer-bottom">
+        <p class="mb-0">Beratung · Reservierung · Abholung</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,738 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #f8f4ee;
+  color: #2b2b2b;
+}
+
+a {
+  text-decoration: none;
+}
+
+.custom-navbar {
+  background-color: #8B1E3F;
+  padding: 18px 0;
+}
+
+.brand-logo {
+  color: #E8DCC4 !important;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.custom-navbar .nav-link {
+  color: #E8DCC4 !important;
+  margin-left: 16px;
+}
+
+.custom-navbar .nav-link:hover {
+  color: white !important;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #8B1E3F 0%, #5f1028 100%);
+  color: #E8DCC4;
+  padding: 90px 0;
+}
+
+.hero-kicker,
+.section-kicker {
+  color: #E8DCC4;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero-text {
+  font-size: 1.15rem;
+  max-width: 680px;
+  margin-bottom: 32px;
+}
+
+.hero-buttons .btn {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+.btn-primary {
+  background-color: #8B1E3F;
+  border-color: #8B1E3F;
+}
+
+.btn-primary:hover {
+  background-color: #6f1732;
+  border-color: #6f1732;
+}
+
+.btn-outline-light {
+  border-color: #E8DCC4;
+  color: #E8DCC4;
+}
+
+.usp-box {
+  background-color: #E8DCC4;
+  color: #2F4F4F;
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.usp-box h2 {
+  color: #8B1E3F;
+}
+
+.section-block {
+  padding: 70px 0;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 42px auto;
+}
+
+.section-heading h2 {
+  color: #8B1E3F;
+  font-size: 2.4rem;
+}
+
+.section-heading p {
+  font-size: 1.05rem;
+}
+
+.book-card {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+  background-color: white;
+}
+
+.book-card .card-title {
+  color: #8B1E3F;
+  font-size: 1.6rem;
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #E8DCC4;
+}
+
+.book-cover-placeholder {
+  height: 100%;
+  min-height: 320px;
+  background-color: #E8DCC4;
+  color: #8B1E3F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.genre-badge {
+  background-color: #2F4F4F;
+  color: white;
+  align-self: flex-start;
+}
+
+.book-author {
+  color: #2F4F4F;
+  font-weight: bold;
+}
+
+.book-details {
+  padding-left: 18px;
+  margin-bottom: 20px;
+}
+
+.company-section {
+  background-color: #E8DCC4;
+}
+
+.company-section h2 {
+  color: #8B1E3F;
+}
+
+.info-card {
+  background-color: white;
+  border-left: 8px solid #2F4F4F;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+  color: #8B1E3F;
+}
+
+.navigation-section {
+  background-color: #f8f4ee;
+}
+
+.quick-link {
+  display: block;
+  text-align: center;
+  background-color: white;
+  color: #8B1E3F;
+  padding: 28px 16px;
+  border-radius: 14px;
+  font-weight: bold;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.09);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quick-link:hover {
+  color: #2F4F4F;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+}
+
+.footer-section {
+  background-color: #2F4F4F;
+  color: #E8DCC4;
+  padding: 30px 0;
+}
+
+.footer-section a {
+  color: #E8DCC4;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-section {
+    padding: 60px 0;
+  }
+
+  .book-cover {
+    height: 280px;
+  }
+}
+/* Startseite Literaturhaus München */
+.home-page {
+  background-color: #f8f4ee;
+  color: #2b2b2b;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.lh-navbar {
+  background-color: #fffaf3;
+  border-bottom: 1px solid rgba(139, 30, 63, 0.18);
+  padding: 18px 0;
+}
+
+.lh-brand {
+  color: #8B1E3F !important;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.lh-navbar .nav-link {
+  color: #2F4F4F;
+  font-weight: 600;
+  margin-left: 14px;
+}
+
+.lh-navbar .nav-link:hover {
+  color: #8B1E3F;
+}
+
+.lh-hero {
+  min-height: 680px;
+  background-image: url('/images/sections/hero-literaturhaus-muenchen.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.lh-hero-overlay {
+  min-height: 680px;
+  background: linear-gradient(90deg, rgba(47, 79, 79, 0.92) 0%, rgba(47, 79, 79, 0.72) 42%, rgba(47, 79, 79, 0.15) 100%);
+  display: flex;
+  align-items: center;
+}
+
+.min-vh-75 {
+  min-height: 680px;
+}
+
+.lh-kicker,
+.lh-section-kicker {
+  color: #8B1E3F;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.lh-hero .lh-kicker {
+  color: #E8DCC4;
+}
+
+.lh-hero h1 {
+  color: #fffaf3;
+  font-size: 4.4rem;
+  line-height: 1.05;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.lh-hero-text {
+  color: #f4ead8;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 680px;
+  margin-bottom: 32px;
+}
+
+.lh-hero-actions .btn {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+.btn-lh-primary {
+  background-color: #8B1E3F;
+  border: 1px solid #8B1E3F;
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 999px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.btn-lh-primary:hover {
+  background-color: #6f1732;
+  border-color: #6f1732;
+  color: #fff !important;
+}
+
+.btn-lh-light {
+  background-color: rgba(232, 220, 196, 0.92);
+  border: 1px solid #E8DCC4;
+  color: #2F4F4F !important;
+  font-weight: 700;
+  border-radius: 999px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.btn-lh-light:hover {
+  background-color: #fffaf3;
+  color: #8B1E3F !important;
+}
+
+.btn-lh-outline {
+  border: 1px solid #8B1E3F;
+  color: #8B1E3F;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-weight: 700;
+}
+
+.btn-lh-outline:hover {
+  background-color: #8B1E3F;
+  color: #fff;
+}
+
+.lh-section {
+  padding: 78px 0;
+}
+
+.lh-section h2 {
+  color: #8B1E3F;
+  font-size: 2.7rem;
+  font-weight: 700;
+}
+
+.lh-section-text {
+  max-width: 740px;
+  color: #555;
+  font-size: 1.08rem;
+}
+
+.lh-book-card {
+  background-color: #fffaf3;
+  border: 1px solid rgba(139, 30, 63, 0.12);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(47, 79, 79, 0.13);
+}
+
+.lh-book-image-wrap {
+  background: linear-gradient(180deg, #E8DCC4, #f8f4ee);
+  padding: 28px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lh-book-image {
+  width: 100%;
+  max-height: 390px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.2);
+}
+
+.lh-book-content {
+  padding: 32px;
+}
+
+.lh-book-content h3 {
+  color: #8B1E3F;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+.lh-author {
+  color: #2F4F4F;
+  font-weight: 700;
+}
+
+.lh-badge {
+  display: inline-block;
+  background-color: #2F4F4F;
+  color: #fff;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.lh-book-meta {
+  list-style: none;
+  padding-left: 0;
+  margin: 18px 0 24px;
+  color: #444;
+}
+
+.lh-book-meta li {
+  margin-bottom: 5px;
+}
+
+.lh-about-section {
+  background-color: #E8DCC4;
+}
+
+.lh-about-image {
+  width: 100%;
+  border-radius: 28px;
+  box-shadow: 0 18px 45px rgba(47, 79, 79, 0.16);
+}
+
+.lh-contact-box {
+  background-color: #fffaf3;
+  border-left: 8px solid #2F4F4F;
+  border-radius: 18px;
+  padding: 24px;
+  margin-top: 26px;
+  box-shadow: 0 10px 25px rgba(47, 79, 79, 0.1);
+}
+
+.lh-contact-box p:last-child {
+  margin-bottom: 0;
+}
+
+.lh-quick-section {
+  background-color: #f8f4ee;
+}
+
+.lh-quick-card {
+  display: block;
+  background-color: #fffaf3;
+  color: #8B1E3F;
+  border: 1px solid rgba(139, 30, 63, 0.12);
+  border-radius: 20px;
+  padding: 28px 18px;
+  box-shadow: 0 10px 26px rgba(47, 79, 79, 0.1);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lh-quick-card:hover {
+  color: #2F4F4F;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(47, 79, 79, 0.16);
+}
+
+.lh-footer {
+  background-color: #2F4F4F;
+  color: #E8DCC4;
+  padding: 28px 0;
+}
+
+.lh-footer a {
+  color: #E8DCC4;
+  text-decoration: none;
+}
+
+.lh-footer a:hover {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .lh-hero,
+  .lh-hero-overlay,
+  .min-vh-75 {
+    min-height: 560px;
+  }
+
+  .lh-hero h1 {
+    font-size: 3rem;
+  }
+
+  .lh-hero-overlay {
+    background: rgba(47, 79, 79, 0.82);
+  }
+}
+
+@media (max-width: 767px) {
+  .lh-navbar .navbar-nav {
+    margin-top: 12px;
+  }
+
+  .lh-navbar .nav-link {
+    margin-left: 0;
+  }
+
+  .lh-section {
+    padding: 54px 0;
+  }
+
+  .lh-section h2 {
+    font-size: 2.1rem;
+  }
+
+  .lh-book-image-wrap {
+    min-height: 320px;
+  }
+}
+
+
+/* Impressum */
+.lh-legal-page {
+  background-color: #f8f4ee;
+  color: #2b2b2b;
+}
+
+.lh-legal-hero {
+  background: linear-gradient(135deg, rgba(139, 30, 63, 0.96), rgba(47, 79, 79, 0.94));
+  color: #E8DCC4;
+  padding: 72px 0;
+}
+
+.lh-legal-hero h1 {
+  font-size: 3.4rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.lh-legal-hero p {
+  max-width: 780px;
+  font-size: 1.12rem;
+  margin-bottom: 0;
+}
+
+.lh-legal-card {
+  background-color: #fffaf3;
+  border-radius: 26px;
+  padding: 42px;
+  box-shadow: 0 18px 45px rgba(47, 79, 79, 0.12);
+  border: 1px solid rgba(139, 30, 63, 0.1);
+}
+
+.lh-legal-card h2 {
+  color: #8B1E3F;
+  margin-bottom: 26px;
+}
+
+.lh-legal-card h3 {
+  color: #2F4F4F;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.lh-legal-card p {
+  line-height: 1.75;
+}
+
+.lh-legal-note {
+  background-color: #E8DCC4;
+  border-left: 8px solid #8B1E3F;
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-top: 34px;
+}
+
+@media (max-width: 767px) {
+  .lh-legal-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .lh-legal-card {
+    padding: 26px;
+  }
+}
+
+
+/* Großer Footer statt Schnellzugriff */
+.lh-footer-large {
+  background: linear-gradient(135deg, #2F4F4F 0%, #1f3838 100%);
+  color: #E8DCC4;
+  padding: 64px 0 26px;
+  margin-top: 0;
+}
+
+.lh-footer-large h3 {
+  color: #fffaf3;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.lh-footer-brand {
+  color: #fffaf3;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.lh-footer-text {
+  color: rgba(232, 220, 196, 0.9);
+  line-height: 1.7;
+}
+
+.lh-footer-large a {
+  color: #E8DCC4;
+  text-decoration: none;
+}
+
+.lh-footer-large a:hover {
+  color: #fff;
+}
+
+.btn-lh-footer {
+  background-color: #8B1E3F;
+  color: #fffaf3 !important;
+  border: 1px solid #8B1E3F;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.btn-lh-footer:hover {
+  background-color: #6f1732;
+  border-color: #6f1732;
+}
+
+.lh-footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.lh-footer-links li {
+  margin-bottom: 9px;
+}
+
+.lh-footer-bottom {
+  border-top: 1px solid rgba(232, 220, 196, 0.22);
+  margin-top: 46px;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: rgba(232, 220, 196, 0.78);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 767px) {
+  .lh-footer-large {
+    padding: 46px 0 24px;
+  }
+
+  .lh-footer-brand {
+    font-size: 1.65rem;
+  }
+
+  .lh-footer-bottom {
+    display: block;
+  }
+
+  .lh-footer-bottom p + p {
+    margin-top: 8px;
+  }
+}
+
+
+/* Logo und weniger runde Buttons */
+.lh-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.lh-logo-img {
+  height: 58px;
+  width: auto;
+  display: block;
+}
+
+.home-page .btn,
+.btn-lh-primary,
+.btn-lh-light,
+.btn-lh-outline,
+.btn-lh-footer {
+  border-radius: 6px !important;
+}
+
+.lh-book-card,
+.lh-about-image,
+.lh-contact-box {
+  border-radius: 14px;
+}
+
+.lh-badge {
+  border-radius: 4px;
+}
+
+@media (max-width: 767px) {
+  .lh-logo-img {
+    height: 46px;
+  }
+}
+
+/* Datenschutzseite */
+.lh-legal-card {
+  border-radius: 14px;
+}
+
+.lh-legal-note {
+  border-radius: 8px;
+}

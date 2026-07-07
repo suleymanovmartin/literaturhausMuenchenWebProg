@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formular</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form action="neuesformular" method="post">
+        <label for="nachname">Nachname:</label>
+        <input type="text" name="nachname">
+        <br>
+
+        <label for="vorname">Vorname:</label>
+        <input type="text" name="vorname">
+        <br>
+
+        <label for="stadt">Stadt:</label>
+        <input type="text" name="stadt">
+        <br>
+        
+        <label for="postleitzahl">Postleitzahl:</label>
+        <input type="number" name="postleitzahl">
+        <br>
+
+        <label for="email">E-Mail:</label>
+        <input type="email" name="e-mail">
+        <br>
+
+        <label for="nummer">Telefonnummer (freiwillig):</label>
+        <input type="number" name="nummer">
+        <br>
+
+        <label for="ausleihen">Ausleihung:</label>
+        <input type="date" name="ausleihen">
+        <br>
+        <br>
+        <input type="submit" value="Senden">
+    </form>
+    <br>
+    
+    <a href="<%= link %>">Zurück zur Startseite</a>
+  </body>
+</html>
