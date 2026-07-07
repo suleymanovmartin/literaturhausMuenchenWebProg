@@ -1,21 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-iarray = 
-[
-  {iname: "Max", age: 19},
-  {iname: "Dubrovnik", age: 456},
-  {iname: "Sandra", age: 23},
+const reservierungen = [
+  { id: 0, name: 'Ashlabad', title: 'Bibel' },
+  { id: 1, name: 'Harun', title: 'Koran' }
 ];
 
-rarray =
-[
-  {id: 0, name: "Ashlabad", title: 'Bibel'},
-  {id: 1, name: "Harun", title: 'Koran'}
-
-]
-
-const bucharray = [
+const buecher = [
   {
     title: 'Die Sprache der Dinge',
     isbn: '978-3-948217-41-0',
@@ -70,159 +61,166 @@ const bucharray = [
   }
 ];
 
-nachricht = "Hallo"
-daten = {
-  person: "Chris",
-  age: 18,
-};
-
-router.get('/', function(req, res, next) {
-  const neuesteBuecher = bucharray.slice(-2).reverse();
+// Startseite
+router.get('/', function(req, res) {
+  const neuesteBuecher = buecher.slice(-2).reverse();
 
   res.render('index', {
     title: 'Literaturhaus München',
-    neuesteBuecher: neuesteBuecher,
+    neuesteBuecher,
     link: '/reservieren'
   });
 });
 
-
-/* http://localhost/impressum */
-router.get('/impressum', function(req, res, next) {
+// Rechtliches
+router.get('/impressum', function(req, res) {
   res.render('impressum', {
     title: 'Impressum | Literaturhaus München'
   });
 });
 
-
-/* http://localhost/datenschutz */
-router.get('/datenschutz', function(req, res, next) {
+router.get('/datenschutz', function(req, res) {
   res.render('datenschutz', {
     title: 'Datenschutz | Literaturhaus München'
   });
 });
 
-/* http://localhost/reservieren */
-router.get('/reservieren', function(req, res, next) {
-  res.render('reservierung', { title: 'Reservierung', link: 'http://localhost/' });
+// Reservierung und Formular
+router.get('/reservieren', function(req, res) {
+  res.render('reservierung', {
+    title: 'Reservierung',
+    link: '/'
+  });
 });
 
-/* http://localhost/formular */
-router.get('/formular', function(req, res, next) {
-  res.render('formular', { title: 'Formular', link: 'http://localhost/' });
+router.get('/formular', function(req, res) {
+  res.render('formular', {
+    title: 'Formular',
+    link: '/'
+  });
 });
 
-/* http://localhost/neuesformular */
-router.post('/neuesformular', function(req, res, next) {
-  console.log(req.body.ausleihen);
-  let ausleihen = req.body.ausleihen;
-  res.send("Danke für deine Reservierung!");
+router.post('/neuesformular', function(req, res) {
+  const ausleihdatum = req.body.ausleihen;
+  console.log(ausleihdatum);
+
+  res.send('Danke für deine Reservierung!');
 });
 
-//Ende Christinas Routen
-
-router.get('/1', function(req, res, next) {
+// Übungsrouten
+router.get('/1', function(req, res) {
   res.render('index', {
-     title: 'Express' ,
-     nachricht: 'Du Hurensohn'
-    });
+    title: 'Express',
+    neuesteBuecher: [],
+    link: '/reservieren'
+  });
 });
-
-router.get('/:year/:month/:day', function(req, res) {
-  res.send("Das Datum lautet" + req.params.year + "." + req.params.month + "." + req.params.day)
-})
 
 router.get('/names', function(req, res) {
-  let qname = req.query.name;
-  res.send("Dein Name lautet:" + qname + ".")
-})
+  const qname = req.query.name;
+
+  res.send(`Dein Name lautet: ${qname}.`);
+});
 
 router.get('/:year/:month/:day', function(req, res) {
-  let qname = req.query.name
-  res.send("Hallo " + qname + ". " + "Heute ist der " + req.params.day + "." + req.params.month + "." + req.params.year)
-})
+  const { year, month, day } = req.params;
+  const qname = req.query.name;
 
-router.get('/lyxia.html', function(req, res, next) {
-  res.render('lyxias.ejs', {
+  if (qname) {
+    return res.send(`Hallo ${qname}. Heute ist der ${day}.${month}.${year}.`);
+  }
+
+  res.send(`Das Datum lautet ${year}.${month}.${day}.`);
+});
+
+router.get('/lyxia.html', function(req, res) {
+  res.render('lyxias', {
     title: 'lyxia',
     einAndererParameter: 'Text, bla, bla'
   });
 });
 
-router.get('/test', function(req, res, next) {
+router.get('/test', function(req, res) {
   res.render('test');
-})
+});
 
-router.get('/login', function(req, res, next) {
+// Login und Registrierung
+router.get('/login', function(req, res) {
   let meldung = null;
 
   if (req.query.erfolg === 'true') {
-    meldung = 'Deine Registrierung war erfolgreich, du kannst dich nun anmelden!'
+    meldung = 'Deine Registrierung war erfolgreich, du kannst dich nun anmelden!';
   }
-  res.render('login.ejs', {
-    nachricht: meldung,
-  })
-})
+
+  res.render('login', {
+    nachricht: meldung
+  });
+});
 
 router.post('/register', function(req, res) {
-  let username = req.body.name;
-  let password = req.body.password;
-  let address = req.body.address;
+  const username = req.body.username;
+  const password = req.body.password;
+  const address = req.body.address;
+
+  console.log({ username, password, address });
 
   res.redirect('/login?erfolg=true');
-})
+});
 
-router.get('/admin/produkte', function(req, res, next) {
+// Adminbereich
+router.get('/admin/produkte', function(req, res) {
   res.render('admin-produkte', {
-    daten: bucharray,
-    reservierungarray: rarray,
-  }) 
-
-})
+    daten: buecher,
+    reservierungarray: reservierungen
+  });
+});
 
 router.post('/admin/produkte/loeschen/:index', function(req, res) {
-  löschindex = req.params.index;
-  bucharray.splice(löschindex, 1);
+  const loeschindex = Number(req.params.index);
+  buecher.splice(loeschindex, 1);
 
   res.redirect('/admin/produkte');
 });
 
-router.post('/admin/produkte/hinzufuegen/', function(req, res) {
-  let buch = {
-    title : req.body.title,
-    isbn : req.body.isbn,
-    author : req.body.author,
-    genre : req.body.genre,
-    frontcover : req.body.frontcover,
-    freecover : req.body.freecover,
-    backcover : req.body.backcover,
-    description : req.body.description,
-    price : req.body.price,
-    bestand : req.body.bestand,
-    id : bucharray.length,
-  }
+router.post('/admin/produkte/hinzufuegen', function(req, res) {
+  const buch = {
+    title: req.body.title,
+    isbn: req.body.isbn,
+    author: req.body.author,
+    genre: req.body.genre,
+    frontcover: req.body.frontcover,
+    freecover: req.body.freecover,
+    backcover: req.body.backcover,
+    description: req.body.description,
+    price: req.body.price,
+    bestand: req.body.bestand,
+    id: buecher.length
+  };
 
-  bucharray.push(buch);
-  
+  buecher.push(buch);
+
   res.redirect('/admin/produkte');
-})
+});
 
 router.post('/admin/produkte/reservierung/loeschen/:index', function(req, res) {
-  let löschindex = req.params.index;
-  let suchtitle = rarray[löschindex].title;
-  bucharray.forEach(element => {
-    if (element.title === suchtitle) {
-      element.bestand++;
+  const loeschindex = Number(req.params.index);
+  const suchtitle = reservierungen[loeschindex].title;
+
+  buecher.forEach(function(buch) {
+    if (buch.title === suchtitle) {
+      buch.bestand++;
     }
   });
-  rarray.splice(löschindex, 1);
-  res.redirect('/admin/produkte/');
-})
+
+  reservierungen.splice(loeschindex, 1);
+  res.redirect('/admin/produkte');
+});
 
 router.post('/admin/produkte/reservierung/bestaetigen/:index', function(req, res) {
-  let löschindex = req.params.index;
-  rarray.splice(löschindex, 1);
-  res.redirect('/admin/produkte/');
-})
+  const loeschindex = Number(req.params.index);
+  reservierungen.splice(loeschindex, 1);
+
+  res.redirect('/admin/produkte');
+});
 
 module.exports = router;
