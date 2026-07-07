@@ -2,10 +2,12 @@ const bookModel = require('../models/bookModel');
 
 function showHomepage(req, res) {
   const neuesteBuecher = bookModel.getNewestBooks();
+  const alleBuecher = bookModel.getAllBooks();
 
   res.render('index', {
     title: 'Literaturhaus München',
-    neuesteBuecher,
+    neuesteBuecher: neuesteBuecher,
+    alleBuecher: alleBuecher,
     link: '/reservieren'
   });
 }
