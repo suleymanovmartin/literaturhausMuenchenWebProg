@@ -1,37 +1,44 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var session = require('express-session');
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const blogRouter = require('./routes/blog');
+var indexRouter = require('./routes/index');
 
-const app = express();
+var app = express();
 
-// View Engine
+// EJS rendert die HTML-Seiten aus dem Ordner views.
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Middleware
+// Diese Middleware verarbeitet Logs, Formulardaten, Cookies und statische Dateien.
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routen
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/blog', blogRouter);
+// Die Session hält den angemeldeten Benutzernamen und die Rolle für eine Stunde fest.
+app.use(session({
+  secret: 'lfjgkjf0u9870IAUOISAJDÖKMAÖIU(Xzuixjpüap..a.,ldmslkajij',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60
+  }
+}));
 
-// 404-Fehler weitergeben
+// Alle aktuell benötigten Anwendungsrouten liegen im Index-Router.
+app.use('/', indexRouter);
+
+// Nicht gefundene Routen werden an die Fehlerseite weitergegeben.
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// Error Handler
+// Die zentrale Fehlerbehandlung setzt den HTTP-Status und rendert error.ejs.
 app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
